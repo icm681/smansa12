@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fasilitas Kelas X-5</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .back-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            padding: 10px 20px;
+            text-decoration: none;
+            color: white;
+            border-radius: 8px;
+            transition: all 0.3s;
+            z-index: 1000;
+        }
+
+        .back-btn:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: translateX(-5px);
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            animation: fadeIn 1s ease-out;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .section-title {
+            color: white;
+            font-size: 1.8em;
+            margin: 30px 0 20px 0;
+            padding-left: 15px;
+            border-left: 5px solid white;
+            animation: slideIn 0.5s ease-out;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .facility-card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: slideUp 0.5s ease-out;
+            opacity: 0;
+            animation-fill-mode: forwards;
+        }
+
+        .facility-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .facility-card h3 {
+            color: #1e3c72;
+            font-size: 1.4em;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .facility-card h3 i {
+            color: #2a5298;
+        }
+
+        .facility-card ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .facility-card li {
+            padding: 10px 0;
+            color: #2c3e50;
+            border-bottom: 1px solid #ecf0f1;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .facility-card li:last-child {
+            border-bottom: none;
+        }
+
+        .facility-card li:hover {
+            color: #2a5298;
+            transform: translateX(5px);
+        }
+
+        .facility-card li i {
+            color: #27ae60;
+            font-size: 1.1em;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            color: white;
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        .footer p {
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .facility-card:nth-child(1) { animation-delay: 0.1s; }
+        .facility-card:nth-child(2) { animation-delay: 0.2s; }
+        .facility-card:nth-child(3) { animation-delay: 0.3s; }
+        .facility-card:nth-child(4) { animation-delay: 0.4s; }
+
+        @media (max-width: 768px) {
+            .grid-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .section-title {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="dashboard.html" class="back-btn">
+        <i class="fas fa-arrow-left"></i> Kembali
+    </a>
+
+    <div class="container">
+        <div class="header">
+            <h1><i class="fas fa-warehouse"></i> Fasilitas Kelas X-5</h1>
+            <p>Daftar Lengkap Fasilitas dan Perlengkapan</p>
+        </div>
+
+        <h2 class="section-title"><i class="fas fa-couch"></i> Perabotan Utama</h2>
+        <div class="grid-container">
+            <div class="facility-card">
+                <h3><i class="fas fa-chair"></i> Meja & Kursi</h3>
+                <ul>
+                    <li><i class="fas fa-check-circle"></i> 36 Meja Siswa</li>
+                    <li><i class="fas fa-check-circle"></i> 36 Kursi Siswa</li>
+                    <li><i class="fas fa-check-circle"></i> 1 Meja Guru</li>
+                    <li><i class="fas fa-check-circle"></i> 1 Kursi Guru</li>
+                </ul>
+            </div>
+            
+            <div class="facility-card">
+                <h3><i class="fas fa-chalkboard"></i> Papan Tulis</h3>
+                <ul>
+                    <li><i class="fas fa-check-circle"></i> 2 Papan Tulis Besar</li>
+                </ul>
+            </div>
+        </div>
+
+        <h2 class="section-title"><i class="fas fa-tools"></i> Perlengkapan Pendukung</h2>
+        <div class="grid-container">
+            <div class="facility-card">
+                <h3><i class="fas fa-plug"></i> Elektronik</h3>
+                <ul>
+                    <li><i class="fas fa-check-circle"></i> 2 Kipas Angin</li>
+                    <li><i class="fas fa-times-circle" style="color: #e74c3c;"></i> 0 Proyektor</li>
+                </ul>
+            </div>
+
+            <div class="facility-card">
+                <h3><i class="fas fa-box"></i> Perlengkapan Lain</h3>
+                <ul>
+                    <li><i class="fas fa-check-circle"></i> 1 Lemari</li>
+                    <li><i class="fas fa-times-circle" style="color: #e74c3c;"></i> 0 Pigora</li>
+                    <li><i class="fas fa-times-circle" style="color: #e74c3c;"></i> 0 Mading</li>
+                    <li><i class="fas fa-times-circle" style="color: #e74c3c;"></i> 0 Tempat Sampah</li>
+                    <li><i class="fas fa-check-circle"></i> 1 Cikrak</li>
+                    <li><i class="fas fa-check-circle"></i> 4 Sapu</li>
+                    <li><i class="fas fa-check-circle"></i> 1 Jam Dinding</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p><i class="fas fa-info-circle"></i> Kelas X-5 dilengkapi dengan berbagai fasilitas untuk mendukung kegiatan belajar mengajar yang optimal.</p>
+        </div>
+    </div>
+</body>
+</html>

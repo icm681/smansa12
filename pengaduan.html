@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halaman Pengaduan Kelas X-5 SMAN 1 Mojokerto</title>
+    <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Background */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e0f7fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* Main container */
+        .container {
+            background-color: #ffffff;
+            border-radius: 10px;
+            padding: 30px;
+            max-width: 600px;
+            width: 90%;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+            animation: fadeIn 1s ease-in-out;
+            overflow: hidden;
+        }
+
+        /* Title */
+        header {
+            background-color: #007bb5;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px 10px 0 0;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+            font-weight: bold;
+            animation: slideDown 1s ease-in-out;
+        }
+
+        h2, h3 {
+            color: #007bb5;
+            margin-bottom: 10px;
+        }
+
+        p, li {
+            font-size: 1em;
+            color: #333;
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+
+        /* Contact info section */
+        .contact-info {
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #e0f4ff;
+            border-left: 4px solid #007bb5;
+            border-radius: 5px;
+            transition: transform 0.3s ease;
+        }
+
+        .contact-info:hover {
+            transform: scale(1.02);
+        }
+
+        /* WhatsApp link */
+        .contact-info a {
+            color: #007bb5;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Footer note */
+        .note {
+            font-style: italic;
+            color: #555;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <a href="dashboard.html" class="btn btn-outline-light position-fixed" style="top: 20px; left: 20px; background-color: rgba(255, 255, 255, 0.1); backdrop-filter: blur(5px);">
+        <i class="fas fa-arrow-left"></i> Kembali
+    </a>
+
+<div class="container">
+    <header>Halaman Pengaduan Kelas X-5</header>
+
+    <h2>Jika Anda memiliki keluhan atau pengaduan terkait kegiatan kelas X-5, silakan menghubungi:</h2>
+
+    <div class="contact-info">
+        <h3>Wali Kelas X-5</h3>
+        <p><strong>Nama:</strong>Rachmad Ediwitoko</p>
+        <p><strong>Nomor WhatsApp:</strong> <a href="https://wa.me/082145994468" target="_blank">0821-4599-4468</a></p>
+    </div>
+
+    <div class="contact-info">
+        <h3>Ketua Kelas X-5</h3>
+        <p><strong>Nama:</strong>Moch. Panji Apriyanto</p>
+        <p><strong>Nomor WhatsApp:</strong> <a href="https://wa.me/0881027132368" target="_blank">0881-0271-32368</a></p>
+    </div>
+
+    <h3>Cara Mengajukan Pengaduan:</h3>
+    <ul>
+        <li>Hubungi Ketua Kelas atau Wali Kelas melalui WhatsApp yang tertera di atas.</li>
+        <li>Sertakan informasi lengkap mengenai keluhan atau pengaduan Anda.</li>
+        <li>Kami akan segera menindaklanjuti dan memberikan solusi terbaik.</li>
+    </ul>
+
+    <h3>Contoh Format Pengaduan:</h3>
+    <p><strong>Nama Pengadu:</strong> [Nama Anda]</p>
+    <p><strong>Kelas:</strong> X-5</p>
+    <p><strong>Masalah/Keluhan:</strong> [Tuliskan dengan jelas]</p>
+    <p><strong>Tanggal Pengaduan:</strong> [Tanggal]</p>
+
+    <p class="note">Kami mengutamakan komunikasi yang baik dan siap mendengarkan setiap masukan untuk kebaikan bersama. Terima kasih atas perhatian dan kerjasamanya.</p>
+</div>
+
+</body>
+</html>

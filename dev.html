@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catatan Developer - Kelas X-5</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .back-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            padding: 10px 20px;
+            text-decoration: none;
+            color: white;
+            border-radius: 8px;
+            transition: all 0.3s;
+            z-index: 1000;
+        }
+
+        .back-btn:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: translateX(-5px);
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            animation: fadeIn 1s ease-out;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .content-card {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            margin-bottom: 30px;
+            animation: slideUp 0.6s ease-out;
+            opacity: 0;
+            animation-fill-mode: forwards;
+            animation-delay: 0.2s;
+        }
+
+        .content-card h2 {
+            color: #1e3c72;
+            font-size: 2em;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .content-card p {
+            color: #2c3e50;
+            font-size: 1.1em;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 5px solid #2a5298;
+        }
+
+        .highlight-box p {
+            margin: 0;
+            font-style: italic;
+            color: #1e3c72;
+            font-weight: 500;
+        }
+
+        .dev-info {
+            text-align: center;
+            margin-top: 30px;
+            padding: 25px;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            border-radius: 15px;
+        }
+
+        .dev-info h3 {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+        }
+
+        .dev-info p {
+            font-size: 1.2em;
+            color: white;
+            opacity: 0.9;
+        }
+
+        .tech-stack {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .tech-badge {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px 20px;
+            border-radius: 20px;
+            backdrop-filter: blur(5px);
+            transition: all 0.3s ease;
+        }
+
+        .tech-badge:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-3px);
+        }
+
+        .photo-section {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .photo-card {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: slideUp 0.6s ease-out;
+            opacity: 0;
+            animation-fill-mode: forwards;
+        }
+
+        .photo-card:nth-child(1) { animation-delay: 0.4s; }
+        .photo-card:nth-child(2) { animation-delay: 0.5s; }
+
+        .photo-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .photo-placeholder {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+
+        .photo-card h4 {
+            color: #1e3c72;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+
+        .photo-card p {
+            color: #7f8c8d;
+            font-size: 0.95em;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .photo-section {
+                grid-template-columns: 1fr;
+            }
+
+            .tech-stack {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="dashboard.html" class="back-btn">
+        <i class="fas fa-arrow-left"></i> Kembali
+    </a>
+
+    <div class="container">
+        <div class="header">
+            <h1><i class="fas fa-code"></i> Catatan Developer</h1>
+            <p>Behind The Scenes</p>
+        </div>
+
+        <div class="content-card">
+            <h2><i class="fas fa-heart"></i> Tentang Project Ini</h2>
+            <p>
+                Saya menyukai teknologi dan segala hal yang berkaitan dengannya. Ketika ada waktu luang, 
+                saya memanfaatkannya untuk menciptakan sesuatu yang bermanfaat. Website ini adalah salah satu 
+                hasil dari ketertarikan saya tersebut.
+            </p>
+            <p>
+                Sebelumnya, saya pernah membuat website serupa untuk SMPN 8. Kini, saya membuatnya kembali 
+                khusus untuk kelas kita, Kelas X-5. Website ini dirancang untuk mempermudah akses informasi 
+                kelas dan menjadi pusat data digital kita.
+            </p>
+
+            <div class="highlight-box">
+                <p>
+                    <i class="fas fa-clock"></i> Website ini dibuat secara cepat dengan bantuan teknologi AI 
+                    hanya dalam waktu 1 hari. Hanya FE sehingga hanya menggunakan github!.. Terima kasih kepada semua yang telah mendukung. 
+                    Semoga website ini dapat membantu kegiatan kelas kita!
+                </p>
+            </div>
+
+            <div class="dev-info">
+                <h3><i class="fas fa-user-tie"></i> Developer</h3>
+                <p>Muhammad Ismail Yusuf</p>
+                
+                <div class="tech-stack">
+                    <div class="tech-badge">
+                        <i class="fas fa-laptop-code"></i> Web Development
+                    </div>
+                    <div class="tech-badge">
+                        <i class="fas fa-paint-brush"></i> UI/UX Design
+                    </div>
+                    <div class="tech-badge">
+                        <i class="fas fa-robot"></i> AI Assisted
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="photo-section">
+            <div class="photo-card">
+                <div class="photo-placeholder">
+                    <i class="fas fa-users"></i>
+                </div>
+                <h4>Hoshizora Group</h4>
+                <p>Tim kolaborasi yang solid dalam mengembangkan berbagai project teknologi dan inovasi digital</p>
+            </div>
+
+            <div class="photo-card">
+                <div class="photo-placeholder">
+                    <i class="fas fa-brain"></i>
+                </div>
+                <h4>AI Technology</h4>
+                <p>Memanfaatkan kecerdasan buatan untuk mempercepat proses pengembangan dan meningkatkan efisiensi</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

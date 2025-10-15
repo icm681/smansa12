@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Acara Kelas X-5</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom right, #ebf8ff, #e0f2fe);
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+    }
+    .container {
+      max-width: 800px;
+      width: 100%;
+      background: #ffffff;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .header h1 {
+      color: #1d4ed8;
+      font-size: 24px;
+      margin-bottom: 5px;
+    }
+    .header p {
+      color: #3b82f6;
+    }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background-color: #2563eb;
+      color: #ffffff;
+      padding: 10px 16px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .button:hover {
+      background-color: #1d4ed8;
+      transform: scale(1.05);
+    }
+    .form {
+      display: none;
+      margin-bottom: 20px;
+    }
+    .form input {
+      width: 100%;
+      padding: 8px;
+      margin: 5px 0;
+      border: 1px solid #d1d5db;
+      border-radius: 4px;
+    }
+    .event-card {
+      border: 1px solid #d1d5db;
+      border-radius: 4px;
+      padding: 16px;
+      margin-top: 10px;
+      background: #f9fafb;
+      transition: transform 0.3s;
+    }
+    .event-card:hover {
+      transform: scale(1.02);
+    }
+    .event-details {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      color: #2563eb;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+    <a href="dashboard.html" class="btn btn-outline-light position-fixed" style="top: 20px; left: 20px; background-color: rgba(255, 255, 255, 0.1); backdrop-filter: blur(5px);">
+        <i class="fas fa-arrow-left"></i> Kembali
+    </a>
+  <div class="container">
+    <div class="header">
+      <h1>Acara Kelas X-5</h1>
+      <p>Jadwal dan Kegiatan Kelas Kita</p>
+    </div>
+    <button class="button" onclick="toggleForm()">+ Tambah Acara Baru</button>
+
+    <div class="form" id="eventForm">
+      <input type="text" id="title" placeholder="Nama Acara" required>
+      <input type="date" id="date" required>
+      <input type="time" id="time" required>
+      <input type="text" id="location" placeholder="Lokasi" required>
+      <button class="button" onclick="addEvent()">Simpan Acara</button>
+      <button class="button" style="background: #9ca3af;" onclick="toggleForm()">Batal</button>
+    </div>
+
+    <div id="eventList">
+      <div class="event-card">
+        <h3 style="color: #1d4ed8; font-size: 18px;">LUX VICTORIA</h3>
+        <div class="event-details"><strong>Tanggal:</strong> 22 November 2025</div>
+        <div class="event-details"><strong>Waktu:</strong> 19:00 - 22:00</div>
+        <div class="event-details"><strong>Lokasi:</strong> SMAN 1 Kota </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleForm() {
+      const form = document.getElementById('eventForm');
+      form.style.display = form.style.display === 'none' || form.style.display === '' ? 'block' : 'none';
+    }
+
+    function addEvent() {
+      const title = document.getElementById('title').value;
+      const date = document.getElementById('date').value;
+      const time = document.getElementById('time').value;
+      const location = document.getElementById('location').value;
+
+      if (title && date && time && location) {
+        const eventList = document.getElementById('eventList');
+        const eventCard = document.createElement('div');
+        eventCard.className = 'event-card';
+
+        eventCard.innerHTML = `
+          <h3 style="color: #1d4ed8; font-size: 18px;">${title}</h3>
+          <div class="event-details"><strong>Tanggal:</strong> ${date}</div>
+          <div class="event-details"><strong>Waktu:</strong> ${time}</div>
+          <div class="event-details"><strong>Lokasi:</strong> ${location}</div>
+        `;
+
+        eventList.appendChild(eventCard);
+        
+        document.getElementById('title').value = '';
+        document.getElementById('date').value = '';
+        document.getElementById('time').value = '';
+        document.getElementById('location').value = '';
+        toggleForm();
+      }
+    }
+  </script>
+</body>
+</html>

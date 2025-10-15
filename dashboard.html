@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard X-5</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 30px;
+            opacity: 0;
+            animation: fadeIn 1s ease forwards;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .banner {
+            width: 100%;
+            height: 300px;
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-bottom: 30px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: slideUp 1s ease forwards;
+        }
+
+        .banner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .menu-item {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            padding: 20px;
+            text-decoration: none;
+            color: #1e3a8a;
+            display: flex;
+            align-items: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            opacity: 0;
+            animation: fadeIn 0.5s ease forwards;
+        }
+
+        .menu-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            background: rgba(255, 255, 255, 1);
+        }
+
+        .menu-icon {
+            font-size: 24px;
+            margin-right: 15px;
+        }
+
+        .instagram-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            padding: 12px 24px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 25px;
+            transition: background 0.3s;
+            margin: 0 auto;
+            width: fit-content;
+        }
+
+        .instagram-link:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 20px 0;
+            color: white;
+            font-size: 1rem;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .menu-item:nth-child(1) { animation-delay: 0.2s; }
+        .menu-item:nth-child(2) { animation-delay: 0.4s; }
+        .menu-item:nth-child(3) { animation-delay: 0.6s; }
+        .menu-item:nth-child(4) { animation-delay: 0.8s; }
+        .menu-item:nth-child(5) { animation-delay: 1.0s; }
+        .menu-item:nth-child(6) { animation-delay: 1.2s; }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            .banner {
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Dashboard X-5</h1>
+            <p>Selamat Datang di Portal Kelas X-5</p>
+        </header>
+
+        <div class="banner">
+            <img src="https://files.catbox.moe/mry73c.jpg" alt="Hoshizora">
+        </div>
+
+        <div class="menu-grid">
+            <a href="fasilitas.html" class="menu-item">
+                <span class="menu-icon">🏫</span>
+                <span>Fasilitas</span>
+            </a>
+             <a href="kosong.html" class="menu-item">
+                <span class="menu-icon">📝</span>
+                <span>Materi Matematika SEGERA</span>
+            </a>
+            <a href="math.html" class="menu-item">
+                <span class="menu-icon">🧮</span>
+                <span>Latihan Soal</span>
+            </a>
+            <a href="strukturkelas.html" class="menu-item">
+                <span class="menu-icon">📊</span>
+                <span>Struktur Kelas</span>
+            </a>
+            <a href="acara.html" class="menu-item">
+                <span class="menu-icon">🎉</span>
+                <span>Acara</span>
+            </a>
+            <a href="jadwalmap.html" class="menu-item">
+                <span class="menu-icon">📝</span>
+                <span>Jadwal Kelas</span>
+            </a>
+            <a href="daftarsiswa.html" class="menu-item">
+                <span class="menu-icon">👥</span>
+                <span>Daftar Siswa</span>
+            </a>
+            <a href="dev.html" class="menu-item">
+                <span class="menu-icon">📝</span>
+                <span>Catatan Dev.</span>
+            </a>
+            <a href="https://www.hoshizora1.my.id/" class="menu-item">
+                <span class="menu-icon">👤</span>
+                <span>Profile Developer</span>
+            </a>
+        </div>
+
+        <a href="https://www.instagram.com/x5explorer/profilecard/?igsh=MWYwcTdnYW05bjF5Zg==" class="instagram-link">
+            <span style="margin-right: 8px;">📸</span>
+            Follow us on Instagram
+        </a>
+    </div>
+
+    <footer>
+        <p>X-5 - SUMA SUMA SUMA SepUluh liMA</p>
+    </footer>
+</body>
+</html>
